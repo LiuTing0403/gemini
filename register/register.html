@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    活动报名
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="./register.css" />
+  <script src="./jquery.min.js"></script>
+  <script>
+    function getInitStyle() {
+      var clientWidth = window.document.documentElement.clientWidth
+      var width
+      if (clientWidth < 500) {
+          width = clientWidth
+      } else if (clientWidth <= 768) {
+          width = clientWidth * 0.7
+      } else if (clientWidth <= 850) {
+          width = 375 * 0.6
+      } else if (clientWidth <= 1024) {
+          width = 375 * 0.7
+      } else if (clientWidth <= 1440) {
+          width = 375 * 0.8
+      } else {
+          width = 375
+      }
+      document.documentElement.style.fontSize = `${width / 3.75}px`
+    }  
+    getInitStyle()  
+  </script>
+</head>
+<body>
+  <h5>欢迎参加本次活动！请您在下方填写您的个人信息，谢谢您的配合！</h5>
+  <form>
+    <div class='formItem'>
+      <label>称呼</label>
+      <input type='radio' id='gender_m' name='gender' value="male"/>
+      <label for='gender_m' class='genderLabel'>先生</label>
+      <input type='radio' id='gender_f' name='gender' value="female"/>
+      <label for='gender_f' class='genderLabel'>女士</label>
+    </div>
+    <div class='formItem'>
+      <label>姓名</label>
+      <input class='textInput' name='name'/>
+    </div>
+    <div class='formItem'>
+      <label>单位</label>
+      <input class='textInput' name='unit'/>
+    </div>
+    <div class='formItem'>
+      <label>邮箱</label>
+      <input class='textInput' name='email'/>
+    </div>
+    <div class='formItem'>
+      <label>手机</label>
+      <input class='textInput' name='mobile'/>
+    </div>
+    <div class='formItem'>
+      <label>证件类型</label>
+      <select class='textInput' name='id_type'>
+        <option value="passport">中国护照</option>
+        <option value="idcard">中国身份证</option>
+      </select>
+    </div>
+    <div class='formItem'>
+      <label>证件号码</label>
+      <input class='textInput' name='id_no'/>
+    </div>
+    <div class='btns'>
+        <button type='submit' class='btn join'>参加</button>
+        <button type='submit' class='btn unjoin'>不参加</button>
+    </div>
+  </form>
+  <script src='./register.js'></script>
+</body>
+</html>
